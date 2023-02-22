@@ -105,11 +105,7 @@ function formValidate(event){
             }
             if(result.article !== undefined){
                 articleError.innerHTML = result.article;
-            }
-
-        
+            }        
         }
-
-
 }
 
