@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <h1>Slug: {{ category }} </h1>
+
+    <div class="container">
+        {% for ele in topic %}
+        
+            {% if ele.id == category  %}
+                <h1>Category: {{ ele.category }} </h1>
+                <h3>{{ ele.title|upper }}</h3>
+                <div class="border row">
+                    <img class="col-3" src="\images\{{ ele.image }}" alt="">
+                    <p class="col-7">{{ ele.story }} </p>
+                </div>
+                <div class="text-end"><em> - {{ ele.author }} </em></div>
+            {% endif %}
+                    
+        {% endfor %}
+        <p></p>
+    </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    
+<div class="mx-3">
+    <h1>News Page Template</h1>
+</div>
+
+<div class="bg-secondary bg-opacity-10 container-fluid px-4">
+    <div class="d-flex justify-content-between">
+
+        <div id="new_topics" class="col-7">
+
+            {# {% for char in topic %}                
+                <div class="my-4 px-4 py-2 bg-light" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+                    <h3 class="">{{ char.title }}</h3>
+                    <div style="border:1px solid green; margin-bottom: 7px;"></div>
+                    <div class="d-flex px-2 justify-content-between">
+                        <p class="pe-2"><img src="images/person-fill.svg" alt="">Posted By: {{ char.author }} 
+                        </p>
+                        <p class="pe-2">
+                        <img src="images/clock-fill.svg" alt="">
+                        {{ char.publishDate }} 
+                        </p>
+                        <p class="pe-2">
+                            <span class="badge text-warning" style="margin-top:3px; position:absolute; top:80;left:818">
+                            4</span> 
+                            <img src="images/heart-fill.svg" alt="">
+                            Likes
+                        </p>
+                    </div>
+                    <div style="border:1px solid green; margin-top:0; margin-bottom:5px"></div>
+                    <div class="d-flex flex-wrap">
+                        <div class="me-3">
+                            <img style="border:2px solid black;" src="\images\{{ char.image }}" height="150" alt="">
+                        </div>
+                        <p class="px-2 col-7" style="width: 35vw; height:155px; overflow:hidden"> {{ char.story }}.</p>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                    <div class="">
+                        <p> Category: {{ char.category }} </p>
+                    </div>
+                        <div>
+                            <button class="btn btn-info text-light "><a href="/news/{{ char.id }}" style="text-decoration:none; color:white">Continue Reading</a></button>
+                        </div>
+                    </div>
+                </div>  
+            {% endfor %}
+                 #}
+        </div>
+
+        <div class="col-4 my-4">
+            
+            <div class="border p-2 bg-light input-group mb-3" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+                <input type="text" class="form-control bg-secondary bg-opacity-10">
+                <button class="btn btn-info text-light" type="button">Search</button>
+            </div>
+            <div>
+                <div class="border mb-1 p-2" style="height: 50px; box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+                    <h5>Feature Posts</h5>
+                </div>
+
+                <div class="border p-2 bg-light" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;">
+                    <div class="border" style="height:190px">
+                        <img src="" alt="pic">
+                    </div>
+                    
+                    <div class="border bg-info bg-opacity-75 text-light">
+                        <h4 class="p-1">Title</h4>
+                        <p class="p-1">
+                        Ut sem nulla pharetra diam sit amet. Pharetra vel turpis nunc eget lorem dolor sed. Porta lorem mollis aliquam ut porttitor leo. Egestas dui id ornare arcu odio ut sem nulla pharetra.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{ asset('js/storyArticles.js')}}"></script>
+{% endblock %}
+

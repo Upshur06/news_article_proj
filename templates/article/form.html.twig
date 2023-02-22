@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ArticlePage{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js">
+</script>
+
+<div class="example-wrapper">
+    <h1>Form Page</h1>
+
+    <form action="{{ path('article') }}" method="post" onsubmit="formValidate()">
+        <div class="mb-3">
+            <label>Choose a category: </label>
+            <input type="text" name="category" id="category" class="form-control" placeholder="technology" />
+            <div id="categoryError"></div>
+        </div>
+        <div class="mb-3">
+            <label>Choose a Title: </label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="Tribune of Merchants" />
+            <div id="titleError"></div>
+        </div>
+        <div class="mb-3">
+            <label>Upload an image:</label>
+            <input type="file" name="image" id="image" class="form-control">
+            <div id="imageError"></div>
+        </div>
+        <div class="mb-3">
+            <label>Write author's name:</label>
+            <input type="text" name="author" id="author"class="form-control" placeholder="Joel Irwin" />
+            <div id="authorError"></div>
+        </div>
+        <div class="mb-3">
+            <label>Write the date published:</label>
+            <input type="date" name="publish_date" id="publish_date" class="form-control" />
+            <div id="publishError"></div>
+        </div>
+        <div class="mb-3">
+            <label>Post an article:</label>
+            <textarea type="text" name="story" id="story" class="form-control" placeholder="comments..."></textarea>
+            <div id="articleError"></div>
+        </div>
+        <div class="mb-3">
+            <input type="submit" name="submit" id="submit" />
+        </div>
+    </form>
+
+</div>
+
+<div>
+    <script src="{{ asset('js/form.js') }}"></script>
+</div>
+{% endblock %}

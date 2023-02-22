@@ -1,0 +1,52 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="container-fluid mt-4">
+    <div class="d-flex justify-content-between mx-2">
+        <div class="headline col-7 px-2">
+            <div>
+                <img class="homeImg">
+            </div>
+            <div class="d-flex justify-content-between mt-4">
+                <h2 class="col-4 fw-bold fs-1">The Bright Future of Web 2023</h2>
+                <div class="col-6">
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Iaculis at erat pellentesque adipiscing. Cras sed felis eget velit aliquet sagittis id consectetur purus.
+                    </p>
+                    <div class="d-grid gap-2 col-10">
+                        <button class="btn btn-primary">
+                            <a class="text-light" style="text-decoration: none" href="{{ path('create_article') }}">Make an article</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <div class="col-4 bg-dark text-light">
+            <div class="newTopics px-2">
+                <h3 class="text-warning mt-2 mb-">New</h3>
+                <div id='topTenArticles' style="height:380px; overflow-y:auto">                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="randomArticleTopics" class="mt-5 mx-4 d-flex justify-content-between" style="width: 96vw; overflow-x:auto">
+
+    {% for new in topic %}
+        <div class="col-3 d-flex flex-wrap">
+            <img class="me-2" src="\images\{{ new.image }}" width="125" height="150" alt="">
+            <div style="width: 120px; height:155px; overflow:hidden">
+                <h5>{{ new.title }}</h5>
+                <p>{{ new.story }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<script src="{{ asset('js/topTenArticles.js')}}"></script>
+{# <script src="{{ asset('js/newsTopics.js')}}"></script> #}
+
+{% endblock %}

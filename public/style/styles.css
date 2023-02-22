@@ -1,0 +1,18 @@
+.homeImg{
+    width: 55vw;
+    height: 30vh;
+    background:url('/images/image-web-3-desktop.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+a:hover{
+    font-style: italic;
+    font-weight: 700;
+}
+
+
+
+#categoryError, #titleError, #imageError, #authorError, #publishError, #articleError{
+    color: red;
+}
